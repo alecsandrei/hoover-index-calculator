@@ -48,15 +48,18 @@ def hoover_index(data, columns=None, as_dataframe=False):
 # France
 df_france = pd.read_csv(r"data/france.csv")
 year_columns = df_france.iloc[:, -21:].columns
+france = hoover_index(df_france, columns=year_columns, as_dataframe=False)
+df_france = hoover_index(df_france, columns=year_columns, as_dataframe=True)
 print(f"France GDP hoover index results as list of tuples:"
-      f"\n{hoover_index(df_france, columns=year_columns, as_dataframe=False)}\n")
+      f"\n{france}\n")
 
 # Great Britain
-df_gbr = pd.read_csv(r"data/gbr.csv")
+df_gbr = pd.read_csv(r"data/great_britain.csv")
 year_columns = df_gbr.iloc[:, -21:].columns
+df_gbr = hoover_index(df_gbr, columns=year_columns, as_dataframe=True)
 print(f"Great Britain GDP hoover index results as dataframe:"
-      f"\n{hoover_index(df_gbr, columns=year_columns, as_dataframe=True)}")
+      f"\n{df_gbr}")
 
 # Saving results
-# df_france.to_csv(r"results/france_hoover.csv")
-# df_gbr.to_csv(r"results/gbr_hoover.csv")
+df_france.to_csv(r"results/france_hoover.csv")
+df_gbr.to_csv(r"results/great_britain_hoover.csv")
