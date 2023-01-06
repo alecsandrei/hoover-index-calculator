@@ -61,5 +61,5 @@ print(f"Great Britain GDP hoover index results as dataframe:"
       f"\n{df_gbr}")
 
 # Saving results
-df_france.to_csv(r"results/france_hoover.csv")
-df_gbr.to_csv(r"results/great_britain_hoover.csv")
+# df_france.to_csv(r"results/france_hoover.csv")
+# df_gbr.to_csv(r"results/great_britain_hoover.csv")
