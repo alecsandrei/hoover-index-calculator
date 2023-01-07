@@ -42,11 +42,11 @@ def hoover_index(data, columns=None, as_dataframe=False):
     return results
 
 
-# These CSV files contain OECD GDP per capita data for France and Great Britain
+# These CSV files contain OECD GDP data for France and Great Britain in Million Dollars
 # Data source: https://www.oecd.org/regional/regional-statistics/
 
 # France
-df_france = pd.read_csv(r"data/france.csv")
+df_france = pd.read_csv(r"data/france.csv", encoding='latin1')
 year_columns = df_france.iloc[:, -21:].columns
 france = hoover_index(df_france, columns=year_columns, as_dataframe=False)
 df_france = hoover_index(df_france, columns=year_columns, as_dataframe=True)
@@ -54,7 +54,7 @@ print(f"France GDP hoover index results as list of tuples:"
       f"\n{france}\n")
 
 # Great Britain
-df_gbr = pd.read_csv(r"data/great_britain.csv")
+df_gbr = pd.read_csv(r"data/great_britain.csv", encoding='latin1')
 year_columns = df_gbr.iloc[:, -21:].columns
 df_gbr = hoover_index(df_gbr, columns=year_columns, as_dataframe=True)
 print(f"Great Britain GDP hoover index results as dataframe:"

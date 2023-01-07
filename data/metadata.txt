@@ -1,0 +1,3 @@
+Data source: https://stats.oecd.org/
+
+Regions and cities -> Gross Domestic Product, Large regions TL2 -> Millions USD, constant prices, constant PPP, base year 2015
